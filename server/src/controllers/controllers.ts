@@ -10,9 +10,9 @@ export const CreateUsers = async (req: Request, res: Response): Promise<void> =>
         const todo = new UserModal({ name, dept });
         await todo.save();
         res.status(201).json({ todo });
-        console.log('Document inserted');
+    
     } catch (error) {
-        console.error(error);
+    
         res.status(500).json({ error: 'Server error' });
     }
 }
@@ -24,7 +24,7 @@ export const createItem = async (req: Request, res: Response): Promise<void> => 
         await item.save();
         res.status(201).json({ item });
     } catch (error) {
-        console.error(error);
+    
         res.status(500).json({ error: 'Server error' });
     }
 }
@@ -111,12 +111,10 @@ export const getCategoryItem = async (req: Request, res: Response) => {
 export const purchaseItem = async (req: Request, res: Response) => {
     try {
         let { purchaseItems } = req?.body
-        console.log({purchaseItems})
         let item = new PurchaseModel({purchaseItems})
         await item?.save()
         res.status(201).json({ item });
     } catch (error) {
-        console.error(error);
         res.status(500).json({ error: 'Server error' });
     }
 }
@@ -131,7 +129,7 @@ export const purchaseItemList = async (req: Request, res: Response) => {
         })
         res.status(200).json( data );
     } catch (error) {
-        console.error(error);
+
         res.status(500).json({ error: 'Server error' });
     }
 }

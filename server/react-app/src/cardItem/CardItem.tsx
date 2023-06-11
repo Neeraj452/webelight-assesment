@@ -13,7 +13,7 @@ const Person: React.FC<Props> = ({ item }) => {
   return (
     <div>
       <h2>{cardItem?.length}</h2>
-      {/*cart count*/}
+
     </div>
   );
 };
